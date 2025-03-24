@@ -5,13 +5,14 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "theatres")
+@Table(name = "theaters")
 @Data
 @NoArgsConstructor
-public class Theatre {
+public class Theater {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -19,12 +20,13 @@ public class Theatre {
     private String name;
     private String address;
 
-    @OneToMany(mappedBy = "theatre", cascade = CascadeType.ALL)
-    private List<Seat> seats;
+    @OneToMany(mappedBy = "theater", cascade = CascadeType.ALL)
+    private List<SeatTemplate> seats;
 
-    public Theatre(String name, String address) {
+    public Theater(String name, String address) {
         this.name = name;
         this.address = address;
+        this.seats = new ArrayList<>();
 
         for(char c = 'A'; c <= 'Z'; c++) {
             for(int i = 1; i <= 16; i++) {
@@ -39,7 +41,8 @@ public class Theatre {
                 else {
                     seatType = SeatType.BACK;
                 }
-                Seat seat = new Seat(seatName, seatType, this);
+                SeatTemplate seat = new SeatTemplate(seatName, seatType, this);
+                seats.add(seat);
             }
         }
     }

@@ -5,21 +5,27 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "shows")
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class Show {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private Long movieId;
-    private Long theatreId;
-    private Timestamp startTime;
-    private Timestamp endTime;
+    private Long theaterId;
+    private LocalDateTime startTime;
+    private LocalDateTime endTime;
+
+    public Show(Long movieId, Long theaterId, LocalDateTime startTime, LocalDateTime endTime) {
+        this.movieId = movieId;
+        this.theaterId = theaterId;
+        this.startTime = startTime;
+        this.endTime = endTime;
+    }
 
 }

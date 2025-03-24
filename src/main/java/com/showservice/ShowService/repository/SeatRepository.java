@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface SeatRepository extends JpaRepository<Seat, Long> {
     List<Seat> findAllByShowId(Long showId);
+
+    List<Seat> findAllByTheaterIdAndShowIdIsNull(Long theaterId);
 }

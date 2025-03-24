@@ -16,20 +16,23 @@ public class Seat {
 
     private String seatName;
     private SeatType seatType;
-    private boolean isBooked;
+    private boolean Booked;
 
     private Long userId;
     private Long showId;
+    private Long theaterId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "theatre_id")
-    private Theatre theatre;
 
-    public Seat(String seatName, SeatType seatType, Theatre theatre) {
+    public Seat(String seatName, SeatType seatType, Long theaterId, Long showId) {
         this.seatName = seatName;
         this.seatType = seatType;
-        this.isBooked = false;
-        this.theatre = theatre;
+        this.Booked = false;
+        this.theaterId = theaterId;
+        this.showId = showId;
     };
+
+    public Seat(String seatName, SeatType seatType, Long theaterId) {
+        this(seatName, seatType, theaterId, null);
+    }
 
 }
