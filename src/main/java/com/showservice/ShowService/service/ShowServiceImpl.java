@@ -1,7 +1,7 @@
 package com.showservice.ShowService.service;
 
 import com.showservice.ShowService.dto.AddShowRequest;
-import com.showservice.ShowService.exeption.TheaterNotFoundException;
+import com.showservice.ShowService.exception.TheaterNotFoundException;
 import com.showservice.ShowService.model.Seat;
 import com.showservice.ShowService.model.SeatTemplate;
 import com.showservice.ShowService.model.Show;
@@ -9,10 +9,8 @@ import com.showservice.ShowService.model.Theater;
 import com.showservice.ShowService.repository.SeatRepository;
 import com.showservice.ShowService.repository.ShowRepository;
 import com.showservice.ShowService.repository.TheaterRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Service

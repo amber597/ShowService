@@ -1,4 +1,4 @@
-package com.showservice.ShowService.exeption;
+package com.showservice.ShowService.exception;
 
 public class TheaterNotFoundException extends RuntimeException {
     public TheaterNotFoundException(Long theaterId) {

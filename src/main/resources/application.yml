@@ -1,0 +1,22 @@
+
+spring:
+  application:
+    name: SHOW-SERVICE
+  datasource:
+    url: jdbc:postgresql://localhost:5432/movie_booking
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  port: 8081
+
+eureka:
+  instance:
+    hostname: local
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

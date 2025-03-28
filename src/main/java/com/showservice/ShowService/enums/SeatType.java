@@ -1,4 +1,4 @@
-package com.showservice.ShowService.enuns;
+package com.showservice.ShowService.enums;
 
 public enum SeatType {
     FRONT, MIDDLE, BACK;

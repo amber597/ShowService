@@ -1,6 +1,7 @@
 package com.showservice.ShowService.model;
 
-import com.showservice.ShowService.enuns.SeatType;
+import com.showservice.ShowService.enums.BookingType;
+import com.showservice.ShowService.enums.SeatType;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,7 +17,7 @@ public class Seat {
 
     private String seatName;
     private SeatType seatType;
-    private boolean Booked;
+    private BookingType bookingType;
 
     private Long userId;
     private Long showId;
@@ -26,7 +27,7 @@ public class Seat {
     public Seat(String seatName, SeatType seatType, Long theaterId, Long showId) {
         this.seatName = seatName;
         this.seatType = seatType;
-        this.Booked = false;
+        this.bookingType = BookingType.AVAILABLE;
         this.theaterId = theaterId;
         this.showId = showId;
     };

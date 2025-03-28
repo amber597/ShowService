@@ -1,6 +1,6 @@
 package com.showservice.ShowService.model;
 
-import com.showservice.ShowService.enuns.SeatType;
+import com.showservice.ShowService.enums.SeatType;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
